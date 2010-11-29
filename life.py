@@ -13,7 +13,6 @@ bezel_size =  30            #padding size allocated for buttons on top/bottom
 width =      500            #width of the game surface
 height =     500            #height of the game surface
 
-speed = 2                   #speed of the game
 occupancy = 0.25            #percentage of cells to occupy in random board
 
 new_game = False            #whether to initialize an entirely new game
