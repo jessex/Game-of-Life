@@ -505,10 +505,10 @@ def game_loop():
                 game_state = "running"
                 stepping = True
             elif load_button.status == True: #Pressed Load
-                readCSV(tkFileDialog.askopenfilename(filetypes=[('CSV Files','.csv'), ('All Files','*')]))
+                read_CSV(tkFileDialog.askopenfilename(filetypes=[('CSV Files','.csv'), ('All Files','*')]))
                 load_button.status = False
             elif save_button.status == True: #Pressed Save
-                writeCSV(tkFileDialog.asksaveasfilename(defaultextension='.csv',filetypes=[('CSV Files','.csv')]))
+                write_CSV(tkFileDialog.asksaveasfilename(defaultextension='.csv',filetypes=[('CSV Files','.csv')]))
                 save_button.status = False
             elif settings_button.status == True: #Pressed Settings
                 dia = SettingsDialog(root, "Game Settings")
@@ -581,7 +581,7 @@ def process_settings(results):
     return True
 
 #read in a pattern saved as a .csv file and load the board
-def readCSV(file):
+def read_CSV(file):
     global cells, generation, population
     try:
         reader = csv.reader(open(file), delimiter=',', quotechar='|')
@@ -608,7 +608,7 @@ def readCSV(file):
         pass
 
 #write the current board state to a .csv file
-def writeCSV(file):
+def write_CSV(file):
     try:
         writer = csv.writer(open(file, 'w'), delimiter=',', quotechar='|')
         for y in range(int(y_dim)):
