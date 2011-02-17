@@ -238,37 +238,6 @@ class Cell:
                                     y = int(x_dim-1)
                                 if (cells[y][x].living == True) and (self.x != x or self.y != y):
                                     self.neighbors += 1
-                        """
-                            if wrap_around == 1: #wrap around is on
-                            #sort of an ugly way to handle the edge wrap around
-                            #and it has a bit of a performance effect, but it 
-                            #works for now
-                                y_check = y
-                                x_check = x
-                                if y < 0 and x < 0: #top left
-                                    y_check = y_dim-1
-                                    x_check = x_dim-1
-                                elif y < 0 and x >= 0 and x <= x_dim-1: #top
-                                    y_check = y_dim-1
-                                elif y < 0 and x > x_dim-1: #top right
-                                    y_check = y_dim-1
-                                    x_check = 0
-                                elif x > x_dim-1 and y >= 0 and y <= y_dim-1: #right
-                                    x_check = 0
-                                elif x > x_dim-1 and y > y_dim-1: #bottom right
-                                    x_check = 0
-                                    y_check = 0
-                                elif y > y_dim-1 and x >= 0 and x <= x_dim-1: #bottom
-                                    y_check = 0
-                                elif y > y_dim-1 and x < 0: #bottom left
-                                    y_check = 0
-                                    x_check = x_dim-1
-                                elif x < 0 and y >= 0 and y <= y_dim-1: #left
-                                    x_check = x_dim-1
-
-                                if (cells[int(y_check)][int(x_check)].living == True):
-                                    self.neighbors += 1
-                            """
                 except: 
                     pass    
         except: 
